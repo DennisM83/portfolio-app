@@ -3,8 +3,10 @@
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [PageController::class, 'index']);
+Route::controller(PageController::class)->group(function () {
+    Route::get('/', 'index');
 
-Route::get('/about', [PageController::class, 'about']);
+    Route::get('/about', 'about');
 
-Route::get('/contact', [PageController::class, 'contact']);
+    Route::get('/contact', 'contact');
+});
