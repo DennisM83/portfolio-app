@@ -18,4 +18,9 @@ class PageController extends Controller
     {
         return view('Pages.contact');
     }
+
+    public function admin()
+    {
+        return view('admin.admin-main');
+    }
 }
